@@ -63,8 +63,8 @@ all: main-build
 main-build: freertos-course.elf secondary-outputs
 
 # Tool invocations
-freertos-course.elf: $(OBJS) $(USER_OBJS) /home/jameswu/projects/FreeRTOS-course/freertos-workplace/STM32F303VCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "freertos-course.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/jameswu/projects/FreeRTOS-course/freertos-workplace/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="freertos-course.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+freertos-course.elf: $(OBJS) $(USER_OBJS) /home/jameswu/projects/FreeRTOS-course/freertos-workplace/freertos-course/STM32F303VCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "freertos-course.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/jameswu/projects/FreeRTOS-course/freertos-workplace/freertos-course/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="freertos-course.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -54,3 +54,4 @@ dkms.conf
 # STM32CubeIDE
 freertos-workplace/.metadata/
 freertos-workplace/freertos-course/Debug/
+freertos-workplace/freertos-course/Release/

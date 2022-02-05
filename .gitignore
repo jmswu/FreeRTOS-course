@@ -52,4 +52,4 @@ Mkfile.old
 dkms.conf
 
 # STM32CubeIDE
-freertos-workplace/.metadata/
+freertos-workplace/.metadata/ 

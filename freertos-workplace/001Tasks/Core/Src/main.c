@@ -21,7 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "FreeRTOS.h"
+#include "task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -48,7 +49,8 @@
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
-
+static void task1Handler(void* parameters);
+static void task2Handler(void* parameters);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -63,6 +65,9 @@ static void MX_GPIO_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+	BaseType_t status = 0;
+	TaskHandle_t task1Handle;
+	TaskHandle_t task2Handle;
 
   /* USER CODE END 1 */
 
@@ -85,6 +90,12 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
+
+  	  status = xTaskCreate(task1Handler, "task-1", 50, "Hello world from task 1", 2, &task1Handle);
+  	  configASSERT(status == pdPASS);
+
+//  	  status = xTaskCreate(task2Handler, "task-2", 100, "Hello world from task 2", 2, &task2Handle);
+//  	  configASSERT(status == pdPASS);
 
   /* USER CODE END 2 */
 
@@ -209,6 +220,16 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+static void task1Handler(void* parameters)
+{
+
+}
+
+static void task2Handler(void* parameters)
+{
+
+}
 
 /* USER CODE END 4 */
 

@@ -55,3 +55,5 @@ dkms.conf
 freertos-workplace/.metadata/
 freertos-workplace/freertos-course/Debug/
 freertos-workplace/freertos-course/Release/
+freertos-workplace/001Tasks/Debug/
+freertos-workplace/001Tasks/Release/
